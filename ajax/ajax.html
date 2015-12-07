@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+	<style type="text/css">
+	label{
+		display: block;
+		margin-top:5px;
+		margin-bottom: 3px;
+
+	}
+	</style>
+</head>
+<body>
+	<h1>员工查询</h1>
+	<label>员工编号</label>
+	<input type="text" id="keyword"/>
+	<button id="search">搜索</button>
+	<h1>员工创建</h1>
+	<label>员工姓名:</label>
+	<input type="text" id="staffName"/>
+	<label>员工编号</label>
+	<input type="text" id="staffNumber"/>
+	<label>员工性别</label>
+	<select id="staffSex">
+		<option>�?/option>
+		<option>�?/option>
+	</select>
+	<label>员工职位</label>
+	<input type="text" id="staffJob"/>
+	<button id="save">保存</button>
+	<p id="createResult"></p>
+
+<script type="text/javascript">
+	document.getElementById("search").onclick = function() { 
+	var request = new XMLHttpRequest();
+	request.open("GET", "server.php?number=" + document.getElementById("keyword").value);
+	request.send();
+	request.onreadystatechange = function() {
+		if (request.readyState===4) {
+			if (request.status===200) { 
+				document.getElementById("searchResult").innerHTML = request.responseText;
+			} else {
+				alert("��������" + request.status);
+			}
+		} 
+	}
+}</script>
+	
+</body>
+</html>
