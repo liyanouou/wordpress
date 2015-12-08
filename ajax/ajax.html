@@ -13,23 +13,23 @@
 	</style>
 </head>
 <body>
-	<!--<h1>员工查询</h1>-->
-	<label>员工编号</label>
+	<!--<h1>鍛樺伐鏌ヨ</h1>-->
+	
 	<input type="text" id="keyword"/>
-	<button id="search">搜索</button>
-	<h1>员工创建</h1>
-	<label>员工姓名:</label>
+	<button id="search">鎼滅储</button>
+	<h1>鍛樺伐鍒涘缓</h1>
+	<label>鍛樺伐濮撳悕:</label>
 	<input type="text" id="staffName"/>
-	<label>员工编号</label>
+	<label>鍛樺伐缂栧彿</label>
 	<input type="text" id="staffNumber"/>
-	<label>员工性别</label>
+	<label>鍛樺伐鎬у埆</label>
 	<select id="staffSex">
-		<option>�?/option>
-		<option>�?/option>
+		<option>鐢?/option>
+		<option>濂?/option>
 	</select>
-	<label>员工职位</label>
+	<label>鍛樺伐鑱屼綅</label>
 	<input type="text" id="staffJob"/>
-	<button id="save">保存</button>
+	<button id="save">淇濆瓨</button>
 	<p id="createResult"></p>
 
 <script type="text/javascript">
@@ -42,7 +42,7 @@
 			if (request.status===200) { 
 				document.getElementById("searchResult").innerHTML = request.responseText;
 			} else {
-				alert("��������" + request.status);
+				alert("发生错误：" + request.status);
 			}
 		} 
 	}
